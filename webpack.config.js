@@ -1,18 +1,18 @@
 module.exports = {
   entry: [
-    './src/index.js'
+    './src/init.js'
   ],
   output: {
-    path: __dirname,
-    publicPath: '/',
-    filename: 'bundle.js'
+    path: './bin',
+    filename: 'script.js'
   },
   module: {
     loaders: [{
+      test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel',
       query: {
-        presets: ['react', 'es2015', 'stage-1']
+        presets: ['react', 'es2015', "stage-1"]
       }
     }]
   },
